@@ -44,6 +44,10 @@ public class Usuario {
 	private List<Timeline> canciones;
 	
 	//getters and setters
+	public Usuario()
+	{
+
+	}
 	public Usuario(String username,String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password) {
 		this.username			= username;
 		this.nombres 			= nombres;

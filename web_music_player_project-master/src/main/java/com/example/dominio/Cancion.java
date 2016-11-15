@@ -23,7 +23,7 @@ public class Cancion {
 	private String genero;
 	private String letra;
 	private Double calificacion;
-
+	private Integer Reproducciones;
 	@ManyToOne
 	@JoinColumn(name = "ARTISTA_ID")
 	private Artista artista;
@@ -101,5 +101,9 @@ public class Cancion {
 	public void setAlbum(Album album) {
 		this.album = album;
 	}
+
+	public Integer getReproducciones(){ return Reproducciones; }
+
+	public void setReproducciones (Integer reproducciones){ Reproducciones=reproducciones; }
 
 }

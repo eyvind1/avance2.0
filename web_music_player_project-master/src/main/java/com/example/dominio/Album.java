@@ -32,7 +32,10 @@ public class Album{
 	      inverseJoinColumns = @JoinColumn(name = "ARTISTA_ID", referencedColumnName = "ID_artista"))
 	private List<Artista> listaArtistas;
 	
-	
+	public Album()
+	{
+		
+	}
 	public Album (String nombre, Timestamp fecha_c){
 		this.nombre 		= nombre;
 		this.fechaCreacion 	= fecha_c;
