@@ -29,6 +29,8 @@ public interface AdministradorRepositorio extends Repository<Administrador, Inte
 	@Query("SELECT a FROM Administrador a where a.apellidoPaterno = :apellidoPaterno")
 	Administrador buscarPorApellidoPaterno (@Param("apellidoPaterno") String apellidoPaterno);
 
+	@Query("SELECT a FROM Administrador a where a.apellidoMaterno = :apellidoMaterno")
+	Administrador buscarPorApellidoMaterno (@Param("apellidoMaterno") String apellidoMaterno);
 
 
 }
