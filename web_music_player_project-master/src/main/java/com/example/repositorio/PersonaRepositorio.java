@@ -16,5 +16,7 @@ public interface PersonaRepositorio extends Repository<Persona, Integer> {
 
 	Persona save(Persona persona);
 
+	//persona es clase abstracta
+
 
 }
