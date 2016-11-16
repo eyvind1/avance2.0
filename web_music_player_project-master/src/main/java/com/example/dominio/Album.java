@@ -18,18 +18,18 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Album{
 	@Id
-	@SequenceGenerator(name = "Album_ID_GENERATOR", sequenceName = "Album_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Album_ID_GENERATOR")
-	@Column(name = "ID_album")
+	@SequenceGenerator(name = "albumGenerator", sequenceName = "albumSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "albumGenerator")
+	@Column(name = "idAlbum")
 	private Integer id;
 	private String nombre;	
 	private Timestamp fechaCreacion;
 	@OneToMany(mappedBy = "album")
 	private List<Cancion> cancionesAlbum;
 	@ManyToMany
-	@JoinTable(name = "album_artista",
-	      joinColumns = @JoinColumn(name = "ALBUM_ID", referencedColumnName = "ID_album"),
-	      inverseJoinColumns = @JoinColumn(name = "ARTISTA_ID", referencedColumnName = "ID_artista"))
+	@JoinTable(name = "albumArtista",
+	      joinColumns = @JoinColumn(name = "albumId", referencedColumnName = "Idalbum"),
+	      inverseJoinColumns = @JoinColumn(name = "artistaId", referencedColumnName = "idArtista"))
 	private List<Artista> listaArtistas;
 	
 	public Album()

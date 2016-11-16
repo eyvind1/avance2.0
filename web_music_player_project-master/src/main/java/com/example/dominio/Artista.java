@@ -16,9 +16,9 @@ import javax.persistence.SequenceGenerator;
 public class Artista{
 	
 	@Id
-	@SequenceGenerator(name = "Artista_ID_GENERATOR", sequenceName = "Artista_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Artista_ID_GENERATOR")
-	private Integer ID_artista;
+	@SequenceGenerator(name = "artistaGenerator", sequenceName = "artistaSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "artistaGenerator")
+	private Integer idArtista;
 	private String nombre;
 	private String bio;
 	
@@ -26,16 +26,16 @@ public class Artista{
 	private List<Cancion> listaCanciones;
 	
 	@ManyToMany
-	@JoinTable(name = "Artista_Cancion",
-		joinColumns = @JoinColumn(name = "Artista_ID", referencedColumnName = "ID_artista"),
-		inverseJoinColumns = @JoinColumn(name = "Cancion_ID", referencedColumnName = "ID_cancion"))
-	private List<Cancion> canciones_artista;
+	@JoinTable(name = "artistaCancion",
+		joinColumns = @JoinColumn(name = "artistaId", referencedColumnName = "idArtista"),
+		inverseJoinColumns = @JoinColumn(name = "cancionId", referencedColumnName = "idCancion"))
+	private List<Cancion> cancionesArtista;
 	
 	@ManyToMany
-	@JoinTable(name = "Artista_Album",
-		joinColumns = @JoinColumn(name = "Artista_ID", referencedColumnName = "ID_artista"),
-		inverseJoinColumns = @JoinColumn(name = "Album_ID", referencedColumnName = "ID_album"))
-	private List<Album> albumes_artista;
+	@JoinTable(name = "artistaAlbum",
+		joinColumns = @JoinColumn(name = "artistaId", referencedColumnName = "idArtista"),
+		inverseJoinColumns = @JoinColumn(name = "albumId", referencedColumnName = "idAlbum"))
+	private List<Album> albumesArtista;
 	
 	public Artista(String nombre,String bio){
 		this.nombre = nombre;
@@ -43,21 +43,21 @@ public class Artista{
 	}
 	
 	public List<Album> getAlbumes_artista() {
-		return albumes_artista;
+		return albumesArtista;
 	}
 
 	public void setAlbumes_artista(List<Album> albumes_artista) {
-		this.albumes_artista = albumes_artista;
+		this.albumesArtista = albumes_artista;
 	}
 
-	public Artista(String nombre_artista,List<Cancion> canciones_artista,List<Album> albums_artista) {
-		this.nombre 			= nombre_artista;		
-		this.canciones_artista 	= canciones_artista;
+	public Artista(String nombreArtista,List<Cancion> cancionesArtista,List<Album> albums_artista) {
+		this.nombre 			= nombreArtista;		
+		this.cancionesArtista 	= cancionesArtista;
 		//this.albumes_artista 	= albums_artista;
 	}
 	
 	public Integer getId(){
-		return ID_artista;
+		return idArtista;
 	}
 
 	public String getNombre() {
@@ -77,14 +77,14 @@ public class Artista{
 	}
 	
 	public List<Cancion> GetCanciones(){
-		return this.canciones_artista;
+		return this.cancionesArtista;
 	}
 	public List<Album> GetAlbumes(){
-		return this.albumes_artista;
+		return this.albumesArtista;
 	}
 	
 	public boolean find_album(Album album){
-		for(Album i : albumes_artista){
+		for(Album i : albumesArtista){
 			if(i == album) return true;
 		}
 		return false;

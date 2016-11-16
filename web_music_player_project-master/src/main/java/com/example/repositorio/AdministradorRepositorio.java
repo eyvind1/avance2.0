@@ -20,7 +20,7 @@ public interface AdministradorRepositorio extends Repository<Administrador, Inte
 
 
 	@Query("SELECT c FROM Administrador c WHERE c.username = :username AND c.password = :password")
-    Administrador login_administrador(@Param("username") String username, @Param("password") String password);
+    Administrador loginAdministrador(@Param("username") String username, @Param("password") String password);
 
 	@Query("SELECT a FROM Administrador a WHERE a.ID_adm = :ID_adm")
 	Administrador buscarPorId(@Param("Id_adm") Integer Id_adm);
