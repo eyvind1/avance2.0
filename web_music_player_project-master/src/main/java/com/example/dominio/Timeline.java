@@ -8,18 +8,18 @@ import javax.persistence.*;
 @Entity
 public class Timeline {
 	@Id
-	@SequenceGenerator(name = "TIMELINE_ID_GENERATOR", sequenceName = "TIMELINE_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TIMELINE_ID_GENERATOR")
-	private Integer ID_timeline;
+	@SequenceGenerator(name = "timelineGenerator", sequenceName = "timelineSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "timelineGenerator")
+	private Integer idTimeline;
     
     @ManyToOne
-    @PrimaryKeyJoinColumn(name="USUARIOID", referencedColumnName="ID_usuario")
+    @PrimaryKeyJoinColumn(name="usuarioId", referencedColumnName="idUsuario")
     private Usuario usuario;
     
     @ManyToOne
-    @PrimaryKeyJoinColumn(name="CANCIONID", referencedColumnName="ID_cancion")
+    @PrimaryKeyJoinColumn(name="cancionId", referencedColumnName="idCancion")
     private Cancion cancion; 
     
-    @Column(name = "fecha_reproduccion")
+    @Column(name = "fechaReproduccion")
     private Timestamp date;
 }

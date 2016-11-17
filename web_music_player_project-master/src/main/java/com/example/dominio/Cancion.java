@@ -16,20 +16,20 @@ import javax.persistence.SequenceGenerator;
 public class Cancion {
 
 	@Id
-	@SequenceGenerator(name = "CANCION_ID_GENERATOR", sequenceName = "CANCION_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CANCION_ID_GENERATOR")
-	private Integer ID_cancion;
+	@SequenceGenerator(name = "cancionGenerator", sequenceName = "cancionSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cancionGenerator")
+	private Integer idCancion;
 	private String nombre;
 	private String genero;
 	private String letra;
 	private Double calificacion;
-	private Integer Reproducciones;
+	private Integer reproducciones;
 	@ManyToOne
-	@JoinColumn(name = "ARTISTA_ID")
+	@JoinColumn(name = "artistaId")
 	private Artista artista;
 
 	@ManyToOne
-	@JoinColumn(name = "ALBUM_ID")
+	@JoinColumn(name = "albumId")
 	private Album album;
 
 	@ManyToMany(mappedBy = "canciones")
@@ -51,7 +51,7 @@ public class Cancion {
 	}
 
 	public Integer getId() {
-		return ID_cancion;
+		return idCancion;
 	}
 
 	public String getNombre() {
@@ -102,8 +102,8 @@ public class Cancion {
 		this.album = album;
 	}
 
-	public Integer getReproducciones(){ return Reproducciones; }
+	public Integer getReproducciones(){ return reproducciones; }
 
-	public void setReproducciones (Integer reproducciones){ Reproducciones=reproducciones; }
+	public void setReproducciones (Integer reproducciones){ reproducciones=reproducciones; }
 
 }

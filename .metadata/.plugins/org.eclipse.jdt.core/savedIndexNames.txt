@@ -45,9 +45,9 @@ INDEX VERSION 1.129+/home/hp/avance2.0/.metadata/.plugins/org.eclipse.jdt.core
 1088185215.index
 2409561945.index
 1932949083.index
-2968270830.index
-595461602.index
 2259882029.index
+595461602.index
+2968270830.index
 2233963263.index
 3361768420.index
 735236151.index
@@ -68,7 +68,6 @@ INDEX VERSION 1.129+/home/hp/avance2.0/.metadata/.plugins/org.eclipse.jdt.core
 2567910220.index
 120211678.index
 3394328082.index
-2334267859.index
 2740914831.index
 1133026392.index
 2277538779.index

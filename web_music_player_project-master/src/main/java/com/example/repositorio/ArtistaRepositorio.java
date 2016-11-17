@@ -12,6 +12,20 @@ import com.example.dominio.Artista;
 
 public interface ArtistaRepositorio extends Repository<Artista, Integer> {
 
+	void delete(Artista artista);
+
+	Artista save(Artista artista);
+
+
+	@Query("SELECT a FROM Artista a WHERE a.ID_artista = :ID_artista")
+	Artista buscarPorId(@Param("Id_artista") Integer Id_artista);
+
+	@Query("SELECT a FROM Artista a")
+	List<Artista> buscarTodos();
+
+	@Query("SELECT a FROM Artista a where a.nombre = :nombre")
+	Artista buscarPorNombre (@Param("nombre") String nombre);
+
 
 
 }

@@ -20,30 +20,30 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Playlist {
   @Id
-  @SequenceGenerator(name = "PLAYLIST_ID_GENERATOR", sequenceName = "PLAYLIST_ID_SEQ")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLAYLIST_ID_GENERATOR")
-  private Integer	ID_playlist;
+  @SequenceGenerator(name = "playlistGenerator", sequenceName = "playlistSeq")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playlistGenerator")
+  private Integer	idPlaylist;
   private String 	nombre;
-  private String 	fecha_creacion;
+  private String 	fechaCreacion;
 
   @ManyToMany
-  @JoinTable(name = "playlist_cancion",
-      joinColumns = @JoinColumn(name = "PLAYLIST_ID", referencedColumnName = "ID_playlist"),
-      inverseJoinColumns = @JoinColumn(name = "CANCION_ID", referencedColumnName = "ID_cancion"))
+  @JoinTable(name = "playlistCancion",
+      joinColumns = @JoinColumn(name = "playlistId", referencedColumnName = "idPlaylist"),
+      inverseJoinColumns = @JoinColumn(name = "cancionId", referencedColumnName = "idCancion"))
   private List<Cancion> canciones;
   
   @ManyToOne
-  @JoinColumn(name = "ID_usuario")
+  @JoinColumn(name = "idUsuario")
   private Usuario usuario;
   
   public Playlist(String nombre,Integer usuario){
 	  this.nombre 		= nombre;
-	  this.ID_playlist 	= usuario;
-	  this.fecha_creacion = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+	  this.idPlaylist 	= usuario;
+	  this.fechaCreacion = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
   }
 
   public Integer getID_playlist() {
-	  return ID_playlist;
+	  return idPlaylist;
   }
 
   public String getNombre() {
@@ -55,11 +55,11 @@ public class Playlist {
   }
 
   public String getFecha_creacion() {
-	  return fecha_creacion;
+	  return fechaCreacion;
   }
 
-  public void setFecha_creacion(String fecha_creacion) {
-	  this.fecha_creacion = fecha_creacion;
+  public void setFecha_creacion(String fechaCreacion) {
+	  this.fechaCreacion = fechaCreacion;
   }	
 
   public Usuario getUsuario() {
@@ -79,7 +79,7 @@ public class Playlist {
 	  return false;
   }
   
-  public void add_Cancion(Cancion cancion){
+  public void addCancion(Cancion cancion){
 	  canciones.add(cancion);
 	  return;
   }

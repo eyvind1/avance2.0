@@ -15,10 +15,10 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Usuario {
 	@Id
-	@SequenceGenerator(name = "Persona_ID_GENERATOR", sequenceName = "Persona_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Persona_ID_GENERATOR")
-	private Integer ID_usuario;
-	private String username;
+	@SequenceGenerator(name = "personaGenerator", sequenceName = "personaSeq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "personaGenerator")
+	private Integer idUsuario;
+	private String userName;
 	private String nombres;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
@@ -28,15 +28,15 @@ public class Usuario {
 	
 	//Crear tabla seguidores_seguidos	
 	@ManyToMany
-	@JoinTable(name = "following_followers",
-		joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID_usuario", nullable = false),
-		inverseJoinColumns = @JoinColumn(name = "follower_id", referencedColumnName = "ID_usuario",nullable = false))
+	@JoinTable(name = "followingFollowers",
+		joinColumns = @JoinColumn(name = "userId", referencedColumnName = "idUsuario", nullable = false),
+		inverseJoinColumns = @JoinColumn(name = "followerId", referencedColumnName = "ID_usuario",nullable = false))
 	private List<Usuario> seguidores;
 	
 	@ManyToMany
-	@JoinTable(name = "Usuario_siguiendo",
-		joinColumns = @JoinColumn(name = "Usuario_ID", referencedColumnName = "ID_usuario"),
-		inverseJoinColumns = @JoinColumn(name = "Siguiendo_ID", referencedColumnName = "ID_usuario"))
+	@JoinTable(name = "usuarioSiguiendo",
+		joinColumns = @JoinColumn(name = "usuarioId", referencedColumnName = "idUsuario"),
+		inverseJoinColumns = @JoinColumn(name = "siguiendoID", referencedColumnName = "idUsuario"))
 	public List<Usuario> siguiendo;
 	
 	//relaciones para el timeline
@@ -48,8 +48,8 @@ public class Usuario {
 	{
 
 	}
-	public Usuario(String username,String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password) {
-		this.username			= username;
+	public Usuario(String userName,String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password) {
+		this.userName			= userName;
 		this.nombres 			= nombres;
         this.apellidoPaterno 	= apellidoPaterno;
         this.apellidoMaterno    = apellidoMaterno;
@@ -59,7 +59,7 @@ public class Usuario {
     }
 	
 	public Integer getId(){
-		return ID_usuario;
+		return idUsuario;
 	}
 	
 	public String getNombres() {
@@ -134,11 +134,11 @@ public class Usuario {
 	}
 
 	public String getUsername() {
-		return username;
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(String userName) {
+		this.userName = userName;
 	}
 	
 	
