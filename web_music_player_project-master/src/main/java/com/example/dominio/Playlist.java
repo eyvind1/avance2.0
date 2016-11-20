@@ -19,69 +19,69 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Playlist {
-  @Id
-  @SequenceGenerator(name = "playlistGenerator", sequenceName = "playlistSeq")
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playlistGenerator")
-  private Integer	idPlaylist;
-  private String 	nombre;
-  private String 	fechaCreacion;
+    @Id
+    @SequenceGenerator(name = "PLAYLIST_ID_GENERATOR", sequenceName = "PLAYLIST_ID_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLAYLIST_ID_GENERATOR")
+    private Integer	ID_playlist;
+    private String 	nombre;
+    private String 	fecha_creacion;
 
-  @ManyToMany
-  @JoinTable(name = "playlistCancion",
-      joinColumns = @JoinColumn(name = "playlistId", referencedColumnName = "idPlaylist"),
-      inverseJoinColumns = @JoinColumn(name = "cancionId", referencedColumnName = "idCancion"))
-  private List<Cancion> canciones;
-  
-  @ManyToOne
-  @JoinColumn(name = "idUsuario")
-  private Usuario usuario;
-  
-  public Playlist(String nombre,Integer usuario){
-	  this.nombre 		= nombre;
-	  this.idPlaylist 	= usuario;
-	  this.fechaCreacion = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-  }
+    @ManyToMany
+    @JoinTable(name = "playlist_cancion",
+            joinColumns = @JoinColumn(name = "PLAYLIST_ID", referencedColumnName = "ID_playlist"),
+            inverseJoinColumns = @JoinColumn(name = "CANCION_ID", referencedColumnName = "ID_cancion"))
+    private List<Cancion> canciones;
 
-  public Integer getID_playlist() {
-	  return idPlaylist;
-  }
+    @ManyToOne
+    @JoinColumn(name = "ID_usuario")
+    private Usuario usuario;
 
-  public String getNombre() {
-	  return nombre;
-  }
+    public Playlist(String nombre,Integer usuario){
+        this.nombre 		= nombre;
+        this.ID_playlist 	= usuario;
+        this.fecha_creacion = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+    }
 
-  public void setNombre(String nombre) {
-	  this.nombre = nombre;
-  }
+    public Integer getID_playlist() {
+        return ID_playlist;
+    }
 
-  public String getFecha_creacion() {
-	  return fechaCreacion;
-  }
+    public String getNombre() {
+        return nombre;
+    }
 
-  public void setFecha_creacion(String fechaCreacion) {
-	  this.fechaCreacion = fechaCreacion;
-  }	
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-  public Usuario getUsuario() {
-	  return usuario;
-  }
+    public String getFecha_creacion() {
+        return fecha_creacion;
+    }
 
-  public void setUsuario(Usuario usuario) {
-	  this.usuario = usuario;
-  }
-  
-  public boolean find_Cancion(Cancion cancion){
-	  for(int i = 0; i < canciones.size(); i++){
-		  if(canciones.get(i) == cancion){
-			  return true;
-		  }
-	  }
-	  return false;
-  }
-  
-  public void addCancion(Cancion cancion){
-	  canciones.add(cancion);
-	  return;
-  }
+    public void setFecha_creacion(String fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public boolean find_Cancion(Cancion cancion){
+        for(int i = 0; i < canciones.size(); i++){
+            if(canciones.get(i) == cancion){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void add_Cancion(Cancion cancion){
+        canciones.add(cancion);
+        return;
+    }
 }
 

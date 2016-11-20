@@ -9,27 +9,27 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Administrador {
 	@Id
-	@SequenceGenerator(name = "personaGenerator", sequenceName = "personaSeq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "personaGenerator")
-	private Integer idAdm;
+	@SequenceGenerator(name = "Persona_ID_GENERATOR", sequenceName = "Persona_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Persona_ID_GENERATOR")
+	private Integer ID_adm;
 	private String nombres;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
-	private String userName;
+	private String username;
 	private String password;
-	
-	public Administrador(String nombres, String apellidoPaterno, String apellidoMaterno, String userName, String password) {
+
+	public Administrador(String nombres, String apellidoPaterno, String apellidoMaterno, String username, String password) {
 		this.nombres 			= nombres;
-        this.apellidoPaterno 	= apellidoPaterno;
-        this.apellidoMaterno    = apellidoMaterno;
-        this.userName			= userName;
-        this.password			= password;
-    }
+		this.apellidoPaterno 	= apellidoPaterno;
+		this.apellidoMaterno    = apellidoMaterno;
+		this.username			= username;
+		this.password			= password;
+	}
 
 	public Integer getId(){
-		return idAdm;
+		return ID_adm;
 	}
-	
+
 	public String getNombres() {
 		return nombres;
 	}
@@ -55,11 +55,11 @@ public class Administrador {
 	}
 
 	public String getUsername() {
-		return userName;
+		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

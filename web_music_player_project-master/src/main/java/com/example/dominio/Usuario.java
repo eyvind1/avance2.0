@@ -15,53 +15,53 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Usuario {
 	@Id
-	@SequenceGenerator(name = "personaGenerator", sequenceName = "personaSeq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "personaGenerator")
-	private Integer idUsuario;
-	private String userName;
+	@SequenceGenerator(name = "Persona_ID_GENERATOR", sequenceName = "Persona_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Persona_ID_GENERATOR")
+	private Integer ID_usuario;
+	private String username;
 	private String nombres;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
 	private String email;
 	private String password;
 	private Boolean state; // Activo o Inactivo
-	
-	//Crear tabla seguidores_seguidos	
+
+	//Crear tabla seguidores_seguidos
 	@ManyToMany
-	@JoinTable(name = "followingFollowers",
-		joinColumns = @JoinColumn(name = "userId", referencedColumnName = "idUsuario", nullable = false),
-		inverseJoinColumns = @JoinColumn(name = "followerId", referencedColumnName = "ID_usuario",nullable = false))
+	@JoinTable(name = "following_followers",
+			joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "ID_usuario", nullable = false),
+			inverseJoinColumns = @JoinColumn(name = "follower_id", referencedColumnName = "ID_usuario",nullable = false))
 	private List<Usuario> seguidores;
-	
+
 	@ManyToMany
-	@JoinTable(name = "usuarioSiguiendo",
-		joinColumns = @JoinColumn(name = "usuarioId", referencedColumnName = "idUsuario"),
-		inverseJoinColumns = @JoinColumn(name = "siguiendoID", referencedColumnName = "idUsuario"))
+	@JoinTable(name = "Usuario_siguiendo",
+			joinColumns = @JoinColumn(name = "Usuario_ID", referencedColumnName = "ID_usuario"),
+			inverseJoinColumns = @JoinColumn(name = "Siguiendo_ID", referencedColumnName = "ID_usuario"))
 	public List<Usuario> siguiendo;
-	
+
 	//relaciones para el timeline
 	@OneToMany(mappedBy="usuario")
 	private List<Timeline> canciones;
-	
+
 	//getters and setters
 	public Usuario()
 	{
 
 	}
-	public Usuario(String userName,String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password) {
-		this.userName			= userName;
+	public Usuario(String username,String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password) {
+		this.username			= username;
 		this.nombres 			= nombres;
-        this.apellidoPaterno 	= apellidoPaterno;
-        this.apellidoMaterno    = apellidoMaterno;
-        this.email				= email;
-        this.password			= password;
-        this.state				= true;
-    }
-	
-	public Integer getId(){
-		return idUsuario;
+		this.apellidoPaterno 	= apellidoPaterno;
+		this.apellidoMaterno    = apellidoMaterno;
+		this.email				= email;
+		this.password			= password;
+		this.state				= true;
 	}
-	
+
+	public Integer getId(){
+		return ID_usuario;
+	}
+
 	public String getNombres() {
 		return nombres;
 	}
@@ -109,22 +109,22 @@ public class Usuario {
 	public void setState(Boolean state) {
 		this.state = state;
 	}
-	
+
 	public void add_siguiendo(Usuario usuario){
 		siguiendo.add(usuario);
 	}
-	
+
 	public List<Usuario> get_siguiendo(){
 		return this.siguiendo;
 	}
-	
+
 	public Usuario buscar(List<Usuario> usuarios, Usuario usuario){
 		for(Usuario i : usuarios){
 			if(i == usuario) return usuario;
 		}
 		return null;
 	}
-	
+
 	public void delete_siguiendo(Usuario usuario){
 		int index = 0;
 		for(int i = 0; i < siguiendo.size(); i++){
@@ -134,11 +134,11 @@ public class Usuario {
 	}
 
 	public String getUsername() {
-		return userName;
+		return username;
 	}
 
-	public void setUsername(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	

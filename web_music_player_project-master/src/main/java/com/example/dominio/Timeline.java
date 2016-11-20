@@ -7,19 +7,19 @@ import javax.persistence.*;
 
 @Entity
 public class Timeline {
-	@Id
-	@SequenceGenerator(name = "timelineGenerator", sequenceName = "timelineSeq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "timelineGenerator")
-	private Integer idTimeline;
-    
+    @Id
+    @SequenceGenerator(name = "TIMELINE_ID_GENERATOR", sequenceName = "TIMELINE_ID_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TIMELINE_ID_GENERATOR")
+    private Integer ID_timeline;
+
     @ManyToOne
-    @PrimaryKeyJoinColumn(name="usuarioId", referencedColumnName="idUsuario")
+    @PrimaryKeyJoinColumn(name="USUARIOID", referencedColumnName="ID_usuario")
     private Usuario usuario;
-    
+
     @ManyToOne
-    @PrimaryKeyJoinColumn(name="cancionId", referencedColumnName="idCancion")
-    private Cancion cancion; 
-    
-    @Column(name = "fechaReproduccion")
+    @PrimaryKeyJoinColumn(name="CANCIONID", referencedColumnName="ID_cancion")
+    private Cancion cancion;
+
+    @Column(name = "fecha_reproduccion")
     private Timestamp date;
 }
