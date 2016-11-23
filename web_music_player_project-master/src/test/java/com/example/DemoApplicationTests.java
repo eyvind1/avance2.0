@@ -33,6 +33,24 @@ public class DemoApplicationTests {
 		System.out.println("ID = " + c1.getId());
 		Assert.assertNotNull(c1.getId());
 
+		Cancion cancion2 = new Cancion("Fururu Farara", "Salsa", "...", null, null);
+		Assert.assertNull(cancion2.getId());
+		Cancion c4 = cancionRepositorio.save(cancion2);
+		System.out.println("ID = " + c4.getId());
+		Assert.assertNotNull(c4.getId());
+		
+		Cancion cancion3 = new Cancion("Prueba", "Reggae", "...", null, null);
+		Assert.assertNull(cancion3.getId());
+		Cancion c5 = cancionRepositorio.save(cancion3);
+		System.out.println("ID = " + c5.getId());
+		Assert.assertNotNull(c5.getId());
+		
+		Cancion cancion4 = new Cancion("CUba", "Tecno", "...", null, null);
+		Assert.assertNull(cancion4.getId());
+		Cancion c6 = cancionRepositorio.save(cancion4);
+		System.out.println("ID = " + c6.getId());
+		Assert.assertNotNull(c6.getId());
+		
 		c1.setGenero("Salsa");
 		Cancion c2 = cancionRepositorio.save(c1);
 		Cancion c3 = cancionRepositorio.buscarPorId(c1.getId());
