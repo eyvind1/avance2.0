@@ -1,0 +1,19 @@
+!SESSION 2016-11-23 18:27:36.219 -----------------------------------------------
+eclipse.buildId=3.8.2.201610040743-RELEASE-e46
+java.version=1.8.0_111
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=es_PE
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -data /home/hp/avance2.0.0 -os linux -ws gtk -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-23 18:27:48.153
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-23 18:27:48.163
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-23 18:29:57.069
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-11-23 18:29:57.069
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
