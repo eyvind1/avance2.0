@@ -16,4 +16,6 @@ public interface CancionRepositorio extends Repository<Cancion, Integer> {
 
 	@Query("SELECT c FROM Cancion c ORDER BY c.Reproducciones DESC")
 	List<Cancion> Top100();
+	List<Cancion> findAll();
+	List<Cancion> findOne();
 }
