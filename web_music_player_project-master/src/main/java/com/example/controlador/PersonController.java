@@ -26,14 +26,14 @@ public class PersonController {
 		return showPerson(person.getId(), model);
 	}
 	@RequestMapping(value = "/add-person", method = RequestMethod.GET)
-	String addNewPerson(@RequestParam(required = false) Long id, ModelMap model) {
+	String addNewPerson(@RequestParam(required = false) Integer id, ModelMap model) {
 		Person person = id == null ? new Person() : personService.get(id);
 		model.addAttribute("person", person);
 		return "add-person";
 	}
 
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
-	String showPerson(@RequestParam(required = false) Long id, ModelMap model) {
+	String showPerson(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Person person = personService.get(id);
 			model.addAttribute("person", person);

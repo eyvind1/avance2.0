@@ -2,6 +2,7 @@ package com.example.controlador;
 
 import java.util.Collection;
 
+import com.example.servicio.CancionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,7 +21,7 @@ import com.example.dominio.Album;
 public class AlbumController {
 
 	@Autowired
-	SongService songService;
+	CancionService songService;
 	
 	@Autowired
 	AlbumService albumService;
