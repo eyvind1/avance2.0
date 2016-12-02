@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d11cfbca-bd6c-49f9-90e9-e6e1c3a8684a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/base.twig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/carousel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/index.twig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/people.twig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/person.twig.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlist.twig.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlists.twig.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/song.twig.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/songs.twig.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avance2.0.iws" />
@@ -28,26 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add-person.twig.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/add-person.twig.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-song.twig.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/add-song.twig.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="{{modelo}}List.twig.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/{{modelo}}List.twig.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,11 +37,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add-album.twig.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/add-album.twig.html">
+      <file leaf-file-name="playlist.twig.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlist.twig.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="playlists.twig.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlists.twig.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="song.twig.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/song.twig.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="songs.twig.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/songs.twig.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -80,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="carousel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/carousel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -96,16 +105,6 @@
         <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/resources/img/albums.png">
           <provider selected="true" editor-type-id="images">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.twig.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/index.twig.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -122,8 +121,8 @@
       <file leaf-file-name="person.twig.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/person.twig.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -154,6 +153,10 @@
         <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/index.twig.html" />
         <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/people.twig.html" />
         <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/person.twig.html" />
+        <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlist.twig.html" />
+        <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlists.twig.html" />
+        <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/song.twig.html" />
+        <option value="$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/songs.twig.html" />
       </list>
     </option>
   </component>
@@ -822,12 +825,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480708916552</updated>
-      <workItem from="1480708919944" duration="1586000" />
+      <workItem from="1480708919944" duration="2018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1586000" />
+    <option name="totallyTimeSpent" value="2018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="6" />
@@ -907,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/{{modelo}}List.twig.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/add-album.twig.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -954,21 +949,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/person.twig.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/carousel.html">
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/{{modelo}}List.twig.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlist.twig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/playlists.twig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/song.twig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_music_player_project-master/src/main/webapp/WEB-INF/views/songs.twig.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
