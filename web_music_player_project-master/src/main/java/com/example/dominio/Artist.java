@@ -1,5 +1,5 @@
 package com.example.dominio;
 
-public class Playlist {
+public class Artist {
 
 }

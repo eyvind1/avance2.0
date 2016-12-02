@@ -8,7 +8,7 @@ import com.example.dominio.Administrador;
 import com.example.dominio.Usuario;
 import com.example.dominio.Cancion;
 import com.example.dominio.Album;
-import com.example.dominio.Artista;
+import com.example.dominio.Artist;
 import com.example.dominio.Persona;
 import com.example.dominio.Playlist;
 
@@ -26,7 +26,7 @@ public interface AdministradorRepositorio extends Repository<Administrador, Inte
     Usuario find_usuario(String username);
 
     @Query("SELECT c FROM Artista c WHERE c.nombre = ?1")
-    Artista find_artista(String nombre);
+    Artist find_artista(String nombre);
 
     @Query ("SELECT c FROM Cancion c where c.nombre = ?1")
     Cancion find_cancion(String nombre);
@@ -37,7 +37,7 @@ public interface AdministradorRepositorio extends Repository<Administrador, Inte
     /*seleccionar todos */
 
     @Query ("SELECT c FROM Artista c")
-    List<Artista> Todos_artistas();
+    List<Artist> Todos_artistas();
 
     @Query ("SELECT c FROM Cancion c")
     List<Cancion> Todas_cancion();
