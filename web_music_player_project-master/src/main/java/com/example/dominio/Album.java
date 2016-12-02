@@ -1,8 +1,7 @@
 package com.example.dominio;
 
-import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,63 +11,96 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Album implements BaseEntity<Integer>{
+public class Album implements BaseEntity<Long> {
+
 	@Id
-	@SequenceGenerator(name = "Album_ID_GENERATOR", sequenceName = "Album_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Album_ID_GENERATOR")
-	@Column(name = "ID_album")
-	private Integer id;
-	private String nombre;
-	private Timestamp fechaCreacion;
-	@OneToMany(mappedBy = "album")
-	private List<Cancion> cancionesAlbum;
+	@SequenceGenerator(name = "album_id_generator", sequenceName = "album_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "album_id_generator")
+	private Long id;
+
+	@Column(unique = true, nullable = false, updatable = false, length = 64)
+	private String title;
+
+	@Column(nullable = false)
+	private Date created = new Date();
+	
 	@ManyToMany
-	@JoinTable(name = "album_artista",
-			joinColumns = @JoinColumn(name = "ALBUM_ID", referencedColumnName = "ID_album"),
-			inverseJoinColumns = @JoinColumn(name = "ARTISTA_ID", referencedColumnName = "ID_artista"))
-	private List<Artista> listaArtistas;
-
-	public Album()
-	{
-
-	}
-	public Album (String nombre, Timestamp fecha_c){
-		this.nombre 		= nombre;
-		this.fechaCreacion 	= fecha_c;
+	@JoinTable(name = "album_songs")
+	private Collection<Song> songs;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "artist")
+	private Artist artist;
+	
+	public String getTitle() {
+		return title;
 	}
 
-	public Integer getId(){
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Collection<Song> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(Collection<Song> songs) {
+		this.songs = songs;
+	}
+
+
+
+	public Collection<Song> getCanciones() {
+		return songs;
+	}
+
+	public void setCanciones(Collection<Song> songs) {
+		this.songs = songs;
+	}
+	
+	
+	
+	public Artist getArtist() {
+		return artist;
+	}
+
+	public void setArtist(Artist artist) {
+		this.artist = artist;
+	}
+
+	public Album(){
+		
+	}
+
+	public Album(String title) {
+		this.title = title;
+	}
+	
+	@Override
+	public Long getId() {
 		return id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	@Override
+	public void setId(Long id) {
+		this.id = id;
 	}
+	
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 
-	public Date getFechaCreacion() {
-		return fechaCreacion;
-	}
-
-	public void setFechaCreacion(Timestamp fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
-
-	public List<Artista> getListaArtistas() {
-		return listaArtistas;
-	}
-
-	public void setListaArtistas(List<Artista> listaArtistas) {
-		this.listaArtistas = listaArtistas;
-	}
-	public List<Cancion> getCanciones_Album(){
-		return this.cancionesAlbum;
-	}
 }
