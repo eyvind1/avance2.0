@@ -15,12 +15,12 @@ import com.example.dominio.Song;
 import com.example.dominio.Usuario;
 
 @Entity
-public class ListenLog implements BaseEntity<Long>{
+public class ListenLog implements BaseEntity<Integer>{
 	
 	@Id
 	@SequenceGenerator(name = "log_id_generator", sequenceName = "log_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "log_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@ManyToOne
 	private Song song;
@@ -59,12 +59,12 @@ public class ListenLog implements BaseEntity<Long>{
 	}
 
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

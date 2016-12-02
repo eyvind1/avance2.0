@@ -13,12 +13,12 @@ import javax.persistence.SequenceGenerator;
 
 
 @Entity
-public class Song implements BaseEntity<Long> {
+public class Song implements BaseEntity<Integer> {
 
 	@Id
 	@SequenceGenerator(name = "song_id_generator", sequenceName = "song_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "song_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@Column(length = 64)
 	private String nombre;
@@ -69,14 +69,14 @@ public class Song implements BaseEntity<Long> {
 	}
 
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		// TODO Auto-generated method stub
 		
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		// TODO Auto-generated method stub
 		this.id = id;
 		

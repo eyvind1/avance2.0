@@ -12,7 +12,7 @@ import com.lyncode.jtwig.mvc.JtwigViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages={"controller", "repository", "service"})
+@ComponentScan(basePackages={"controlador", "repositorio", "servicio"})
 public class ConfiguracionWeb extends WebMvcConfigurerAdapter {
 
 	@Bean

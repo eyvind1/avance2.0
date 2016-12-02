@@ -11,12 +11,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Person implements BaseEntity<Long> {
+public class Person implements BaseEntity<Integer> {
 
 	@Id
 	@SequenceGenerator(name = "person_id_generator", sequenceName = "person_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_generator")
-	private Long id;
+	private Integer id;
 
 	@Column(length = 64)
 	private String firstName;
@@ -26,12 +26,12 @@ public class Person implements BaseEntity<Long> {
 
 
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

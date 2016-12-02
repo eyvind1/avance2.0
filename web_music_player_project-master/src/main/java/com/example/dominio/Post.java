@@ -10,12 +10,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
-public class Post implements BaseEntity<Long> {
+public class Post implements BaseEntity<Integer> {
 	
 	@Id
 	@SequenceGenerator(name = "post_id_generator", sequenceName = "post_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_id_generator")
-	private Long id;
+	private Integer id;
 
 	@ManyToOne
 	private Usuario creador;
@@ -27,12 +27,12 @@ public class Post implements BaseEntity<Long> {
 	private String contenido;
 	
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 }

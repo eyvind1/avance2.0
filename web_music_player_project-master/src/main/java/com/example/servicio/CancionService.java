@@ -1,5 +1,6 @@
 package com.example.servicio;
 
+import com.example.dominio.Song;
 import com.example.repositorio.CancionRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

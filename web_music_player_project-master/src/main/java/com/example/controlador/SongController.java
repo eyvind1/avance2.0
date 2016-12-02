@@ -2,6 +2,7 @@ package com.example.controlador;
 
 import java.util.Collection;
 
+import com.example.servicio.CancionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,7 +21,7 @@ import com.example.dominio.Album;
 public class SongController {
 
 	@Autowired
-	SongService songService;
+	CancionService songService;
 	
 	@Autowired
 	AlbumService albumService;
@@ -32,14 +33,14 @@ public class SongController {
 		return showsong(song.getId(), model);
 	}
 	@RequestMapping(value = "/add-song", method = RequestMethod.GET)
-	String addNewSong(@RequestParam(required = false) Long id, ModelMap model) {
+	String addNewSong(@RequestParam(required = false) Integer id, ModelMap model) {
 		Song song = id == null ? new Song() : songService.get(id);
 		model.addAttribute("song", song);
 		return "add-song";
 	}
 
 	@RequestMapping(value = "/song", method = RequestMethod.GET)
-	String showsong(@RequestParam(required = false) Long id, ModelMap model) {
+	String showsong(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Song song = songService.get(id);
 			model.addAttribute("song", song);
@@ -52,7 +53,7 @@ public class SongController {
 	}
 	
 	@RequestMapping(value = "/songs", method = RequestMethod.GET)
-	String showsongs(@RequestParam(required = false) Long id, ModelMap model) {
+	String showsongs(@RequestParam(required = false) Integer id, ModelMap model) {
 
 		if (id != null) {
 			Song song = songService.get(id);

@@ -1,6 +1,7 @@
 package com.example.controlador;
 import java.util.Collection;
 
+import com.example.servicio.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,7 +17,7 @@ import com.example.dominio.Person;
 public class PersonController {
 	
 	@Autowired
-	PersonService personService;
+	PersonaService personService;
 
 	@RequestMapping(value = "/person", method = RequestMethod.POST)
 	String savePerson(@ModelAttribute Person person, ModelMap model) {

@@ -9,12 +9,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Puntuacion implements BaseEntity<Long> {
+public class Puntuacion implements BaseEntity<Integer> {
 	
 	@Id
 	@SequenceGenerator(name = "score_id_generator", sequenceName = "score_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "score_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@ManyToOne
 	private Song song;
@@ -26,12 +26,12 @@ public class Puntuacion implements BaseEntity<Long> {
 	private Integer score;
 	
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

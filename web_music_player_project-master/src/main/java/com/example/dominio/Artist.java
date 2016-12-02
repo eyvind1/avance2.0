@@ -13,11 +13,11 @@ import javax.persistence.SequenceGenerator;
 import com.example.dominio.Person;
 
 @Entity
-public class Artist implements BaseEntity<Long> {
+public class Artist implements BaseEntity<Integer> {
 	@Id
 	@SequenceGenerator(name = "artist_id_generator", sequenceName = "artist_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "artist_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@Column(length = 64)
 	private String nombre;
@@ -58,12 +58,12 @@ public class Artist implements BaseEntity<Long> {
 	}
 
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 
 		this.id = id;
 	}

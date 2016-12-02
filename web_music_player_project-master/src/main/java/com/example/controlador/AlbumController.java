@@ -32,14 +32,14 @@ public class AlbumController {
 		return showalbum(album.getId(), model);
 	}
 	@RequestMapping(value = "/add-album", method = RequestMethod.GET)
-	String addNewAlbum(@RequestParam(required = false) Long id, ModelMap model) {
+	String addNewAlbum(@RequestParam(required = false) Integer id, ModelMap model) {
 		Album album = id == null ? new Album() : albumService.get(id);
 		model.addAttribute("album", album);
 		return "add-album";
 	}
 
 	@RequestMapping(value = "/album", method = RequestMethod.GET)
-	String showalbum(@RequestParam(required = false) Long id, ModelMap model) {
+	String showalbum(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Album album = albumService.get(id);
 			model.addAttribute("album", album);
@@ -52,7 +52,7 @@ public class AlbumController {
 	}
 	
 	@RequestMapping(value = "/albums", method = RequestMethod.GET)
-	String showalbums(@RequestParam(required = false) Long id, ModelMap model) {
+	String showalbums(@RequestParam(required = false) Integer id, ModelMap model) {
 
 		if (id != null) {
 			Album album = albumService.get(id);

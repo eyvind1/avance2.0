@@ -4,8 +4,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import com.example.dominio.Artista;
-import com.example.dominio.Cancion;
+
+import com.example.dominio.Artist;
+import com.example.dominio.Song;
+import com.example.dominio.Song;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.query.Param;
@@ -15,9 +17,9 @@ import com.example.dominio.Album;
 public interface AlbumRepositorio extends Repository<Album, Integer> {
 
 
-	Collection<Cancion> findSongsByAlbumId(Integer albumId);
+	Collection<Song> findSongsByAlbumId(Integer albumId);
 
-	Collection<Artista> findArtistByAlbumId(Integer albumId);
+	Collection<Artist> findArtistByAlbumId(Integer albumId);
 
 	boolean save(Album album);
 	void remove(Album album);

@@ -1,6 +1,8 @@
 package com.example.controlador;
 import java.util.Collection;
 
+import com.example.repositorio.ArtistaRepositorio;
+import com.example.servicio.ArtistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.servicio.ArtistService;
+
 import com.example.dominio.Artist;
 import com.example.dominio.Person;
 
@@ -17,7 +19,7 @@ import com.example.dominio.Person;
 public class ArtistController {
 
 	@Autowired
-	ArtistService artistService;
+	ArtistaService artistService;
 
 	@RequestMapping(value = "/artist", method = RequestMethod.POST)
 	String saveartist(@ModelAttribute Artist artist, ModelMap model) {

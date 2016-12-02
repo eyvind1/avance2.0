@@ -2,6 +2,7 @@ package com.example.controlador;
 
 import java.util.Collection;
 
+import com.example.servicio.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import com.example.servicio.PlayListService;
 import com.example.dominio.Playlist;
 
 @Controller
 public class PlayListController {
 
 	@Autowired
-	PlayListService playlistService;
+	PlaylistService playlistService;
 	
 	@RequestMapping(value = "/playlist/", method = RequestMethod.GET)
 	String showplaylist(@RequestParam(required = false) Long id, ModelMap model) {
