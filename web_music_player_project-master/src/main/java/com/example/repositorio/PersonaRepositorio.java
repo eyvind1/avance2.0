@@ -1,7 +1,8 @@
 package com.example.repositorio;
 
-/**
- * Created by eyvind on 2/12/16.
- */
-public interface PersonaRepositorio {
+
+import com.example.dominio.Persona;
+import org.aspectj.apache.bcel.util.Repository;
+
+public interface PersonaRepositorio extends Repository <Persona, Integer> {
 }

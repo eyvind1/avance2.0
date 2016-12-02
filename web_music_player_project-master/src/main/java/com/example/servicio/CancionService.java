@@ -1,10 +1,31 @@
 package com.example.servicio;
 
-import com.example.dominio.Album;
-import com.example.dominio.Artista;
-import com.example.dominio.Cancion;
+import com.example.repositorio.CancionRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-public interface CancionService {
-	public Cancion crearCancion(String nombre,String genero,String letra, Album album, Artista artista );
-	public Cancion getSong(Integer id);
+import java.util.Collection;
+
+@Service
+public class CancionService {
+    @Autowired
+    CancionRepositorio songRepository;
+
+    @Transactional
+    public void save(Song song) {
+        if (song.getId() == null) {
+            songRepository.persist(song);
+        } else {
+            songRepository.merge(song);
+        }
+    }
+
+    public Song get(Long id) {
+        return songRepository.find(id);
+    }
+
+    public Collection<Song> getAll() {
+        return songRepository.findAll();
+    }
 }
