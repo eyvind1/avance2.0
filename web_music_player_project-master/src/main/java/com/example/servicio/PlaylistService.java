@@ -1,5 +1,6 @@
 package com.example.servicio;
 
+
 import com.example.dominio.Playlist;
 import com.example.repositorio.PlaylistRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,25 +11,26 @@ import java.util.Collection;
 
 @Service
 public class PlaylistService {
-    @Autowired
-    PlaylistRepositorio playlistRepository;
+        @Autowired
+        PlaylistRepositorio playlistRepository;
 
-    @Transactional
-    public void save(Playlist playlist) {
-        if (playlist.getId() == null) {
-            playlistRepository.persist(playlist);
-        } else {
-            playlistRepository.merge(playlist);
+        @Transactional
+        public void save(Playlist playlist) {
+            if (playlist.getId() == null) {
+                playlistRepository.persist(playlist);
+            } else {
+                playlistRepository.merge(playlist);
+            }
+        }
+
+        public Playlist get(Integer id) {
+            return playlistRepository.find(id);
+        }
+
+        public Collection<Playlist> getAll() {
+            return playlistRepository.findAll();
+
         }
     }
 
-    public Playlist get(Integer id) {
-        return playlistRepository.find(id);
-    }
 
-
-    public Collection<Playlist> getAll() {
-        return playlistRepository.findAll();
-
-    }
-}
