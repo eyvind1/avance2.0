@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.servicio.PersonService;
+import com.example.servicio.PersonaService;
 import com.example.dominio.Person;
 
 @Controller

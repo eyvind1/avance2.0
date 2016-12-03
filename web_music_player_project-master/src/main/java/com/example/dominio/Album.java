@@ -16,12 +16,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Album implements BaseEntity<Long> {
+public class Album implements BaseEntity<Integer> {
 
 	@Id
 	@SequenceGenerator(name = "album_id_generator", sequenceName = "album_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "album_id_generator")
-	private Long id;
+	private Integer id;
 
 	@Column(unique = true, nullable = false, updatable = false, length = 64)
 	private String title;
@@ -91,12 +91,12 @@ public class Album implements BaseEntity<Long> {
 	}
 	
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

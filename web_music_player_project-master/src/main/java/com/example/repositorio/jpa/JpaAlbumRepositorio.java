@@ -1,13 +1,19 @@
 package com.example.repositorio.jpa;
 
 import com.example.dominio.Album;
+import com.example.dominio.Artist;
+import com.example.dominio.Song;
+import com.example.repositorio.AlbumRepositorio;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.TypedQuery;
+import java.util.Collection;
+
 @Repository
-public class JpaAlbumRepositorio extends  JpaBaseRepository<Album,Integer>{
+public class JpaAlbumRepositorio extends  JpaBaseRepository<Album,Integer>implements AlbumRepositorio{
     @Override
     public Collection<Song> findSongsByAlbumId(Integer albumId) {
-        String jpaQuery = "Select s from song s join album_songs on s.id = album_songs.songs where album_songs.album = :albumtId";
+        String jpaQuery = "Select s from Song s join album_songs on s.id = album_songs.songs where album_songs.album = :albumtId";
         TypedQuery<Song> query = entityManager.createQuery(jpaQuery, Song.class);
         query.setParameter("albumId", albumId);
         return query.getResultList();

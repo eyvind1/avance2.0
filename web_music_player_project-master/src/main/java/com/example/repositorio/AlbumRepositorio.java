@@ -14,7 +14,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.dominio.Album;
 
-public interface AlbumRepositorio extends Repository<Album, Integer> {
+public interface AlbumRepositorio extends BaseRepository<Album, Integer> {
 
 
 	Collection<Song> findSongsByAlbumId(Integer albumId);

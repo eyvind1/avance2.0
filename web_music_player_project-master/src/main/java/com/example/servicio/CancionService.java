@@ -22,7 +22,7 @@ public class CancionService {
         }
     }
 
-    public Song get(Long id) {
+    public Song get(Integer id) {
         return songRepository.find(id);
     }
 

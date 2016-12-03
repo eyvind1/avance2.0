@@ -1,7 +1,9 @@
 package com.example.servicio;
 
 
-import com.example.dominio.Persona;
+
+import com.example.dominio.Person;
+import com.example.repositorio.PersonaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,10 +13,10 @@ import java.util.Collection;
 @Service
 public class PersonaService {
     @Autowired
-    PersonRepository personRepository;
+    PersonaRepositorio personRepository;
 
     @Transactional
-    public void save(Persona person) {
+    public void save(Person person) {
         if (person.getId() == null) {
             personRepository.persist(person);
         } else {
@@ -22,11 +24,11 @@ public class PersonaService {
         }
     }
 
-    public Persona get(Long id) {
+    public Person get(Integer id) {
         return personRepository.find(id);
     }
 
-    public Collection<Persona> getAll() {
+    public Collection<Person> getAll() {
         return personRepository.findAll();
     }
 }

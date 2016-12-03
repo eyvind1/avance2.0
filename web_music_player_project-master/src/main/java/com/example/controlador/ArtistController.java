@@ -28,14 +28,14 @@ public class ArtistController {
 		return showartist(artist.getId(), model);
 	}
 	@RequestMapping(value = "/add-artist", method = RequestMethod.GET)
-	String addNewartist(@RequestParam(required = false) Long id, ModelMap model) {
+	String addNewartist(@RequestParam(required = false) Integer id, ModelMap model) {
 		Artist artist = id == null ? new Artist() : artistService.get(id);
 		model.addAttribute("artist", artist);
 		return "add-artist";
 	}
 
 	@RequestMapping(value = "/artist", method = RequestMethod.GET)
-	String showartist(@RequestParam(required = false) Long id, ModelMap model) {
+	String showartist(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Artist artist = artistService.get(id);
 			System.out.print(artist.getAlbums());
@@ -50,7 +50,7 @@ public class ArtistController {
 	}
 	
 	@RequestMapping(value = "/artists", method = RequestMethod.GET)
-	String showartists(@RequestParam(required = false) Long id, ModelMap model) {
+	String showartists(@RequestParam(required = false) Integer id, ModelMap model) {
 
 		if (id != null) {
 			Artist artist = artistService.get(id);

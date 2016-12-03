@@ -20,12 +20,12 @@ import javax.persistence.SequenceGenerator;
 import com.example.dominio.Person;
 
 @Entity
-public class Usuario implements BaseEntity<Long>{
+public class Usuario implements BaseEntity<Integer>{
 	
 	@Id
 	@SequenceGenerator(name = "usuario_id_generator", sequenceName = "usuario_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@ManyToOne
 	@JoinColumn(name = "person")
@@ -142,12 +142,12 @@ public class Usuario implements BaseEntity<Long>{
 
 
 	@Override
-	public Long getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
 	@Override
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

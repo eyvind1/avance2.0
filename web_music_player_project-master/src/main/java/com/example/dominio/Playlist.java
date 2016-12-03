@@ -21,12 +21,12 @@ import com.example.dominio.Usuario;
 import com.example.dominio.Song;
 
 @Entity
-public class Playlist implements BaseEntity<Long>{
+public class Playlist implements BaseEntity<Integer>{
 
 	@Id
 	@SequenceGenerator(name = "playlist_id_generator", sequenceName = "playlist_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playlist_id_generator")
-	private Long id;
+	private Integer id;
 	
 	@Column(length=128, nullable=false, updatable=false)
 	private String titulo;
@@ -43,10 +43,10 @@ public class Playlist implements BaseEntity<Long>{
 	private Usuario creador;
 		
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getTitulo() {

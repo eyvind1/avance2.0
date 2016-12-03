@@ -21,7 +21,7 @@ public class PlayListController {
 	PlaylistService playlistService;
 	
 	@RequestMapping(value = "/playlist/", method = RequestMethod.GET)
-	String showplaylist(@RequestParam(required = false) Long id, ModelMap model) {
+	String showplaylist(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Playlist playlist = playlistService.get(id);
 			model.addAttribute("playlist", playlist);
@@ -35,7 +35,7 @@ public class PlayListController {
 			}
 	}
 	@RequestMapping(value = "/playlists/", method = RequestMethod.GET)
-	String showplaylists(@RequestParam(required = false) Long id, ModelMap model) {
+	String showplaylists(@RequestParam(required = false) Integer id, ModelMap model) {
 		if (id != null) {
 			Playlist playlist = playlistService.get(id);
 			model.addAttribute("playlist", playlist);			

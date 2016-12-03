@@ -172,7 +172,9 @@ public abstract class JpaBaseRepository<T extends BaseEntity<K>, K> implements B
     @Override
     public T find(Class<? extends T> clazz, K id) {
         return entityManager.find(clazz, id);
-    };
+    }
+
+    ;
 
     @Override
     public Collection<T> findEntries(int firstResult, int maxResults) {
@@ -191,4 +193,5 @@ public abstract class JpaBaseRepository<T extends BaseEntity<K>, K> implements B
         Collection<T> results = query.getResultList();
         return results.isEmpty() ? null : results.iterator().next();
     }
+}
 

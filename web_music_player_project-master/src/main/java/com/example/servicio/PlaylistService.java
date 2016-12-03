@@ -22,7 +22,7 @@ public class PlaylistService {
         }
     }
 
-    public Playlist get(Long id) {
+    public Playlist get(Integer id) {
         return playlistRepository.find(id);
     }
 
